@@ -1,0 +1,59 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: vagrant
+
+platforms:
+  - name: ubuntu14
+    box: ubuntu/trusty64
+    memory: 512
+    cpus: 1
+    groups:
+      - ubuntu
+
+  - name: ubuntu16
+    box: ubuntu/xenial64
+    memory: 512
+    cpus: 1
+    groups:
+      - ubuntu
+
+  - name: ubuntu18
+    box: ubuntu/bionic64
+    memory: 512
+    cpus: 1
+    groups:
+      - ubuntu
+
+  - name: ubuntu20
+    box: ubuntu/focal64
+    memory: 512
+    cpus: 1
+    groups:
+      - ubuntu
+
+  - name: debian9
+    box: debian/stretch64
+    memory: 512
+    cpus: 1
+    groups:
+      - debian
+
+  - name: debian10
+    box: debian/buster64
+    memory: 512
+    cpus: 1
+    groups:
+      - debian
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
+  lint:
+    name: ansible-lint
+
+verifier:
+  name: ansible

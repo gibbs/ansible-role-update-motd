@@ -1,0 +1,6 @@
+---
+- name: remove the /etc/motd directory
+  ansible.builtin.file:
+    path: /etc/motd
+    state: absent
+  when: update_motd_remove_motd_directory | bool

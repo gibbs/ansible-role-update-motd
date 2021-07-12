@@ -1,0 +1,18 @@
+---
+# When true the /etc/motd will be removed if it exists
+update_motd_remove_motd_directory: true
+
+# Manage the MOTD package and service (Ubuntu only)
+update_motd_package_name: "update-motd"
+update_motd_package_state: present
+update_motd_service_state: start
+update_motd_service_enabled: true
+
+# The Ubuntu Landscape package state (Ubuntu only)
+update_motd_landscape_state: present
+
+# Disable the "motd" service if it exists
+update_motd_disable_motd_service: true
+
+# An array of scripts in /etc/update-motd.d/ to disable
+update_motd_disable_scripts: []

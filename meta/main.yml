@@ -1,0 +1,24 @@
+galaxy_info:
+  role_name: update_motd
+  author: gibbs
+  description: Manage the dynamic MOTD on Ubuntu and Debian
+  license: license (MIT)
+  min_ansible_version: 2.2
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+        - focal
+  galaxy_tags:
+    - motd
+    - updatemotd
+    - ubuntu
+
+dependencies: []

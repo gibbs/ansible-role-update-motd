@@ -1,0 +1,4 @@
+---
+- name: display dynamic motd
+  ansible.builtin.command:
+    cmd: run-parts /etc/update-motd.d/

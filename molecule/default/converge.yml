@@ -1,0 +1,19 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+  tasks:
+    - name: "Include update_motd"
+      include_role:
+        name: "update_motd"
+      vars:
+        update_motd_disable_scripts:
+          - 00-header
+          - 10-uname

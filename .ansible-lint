@@ -1,0 +1,4 @@
+exclude_paths:
+ - ./molecule/
+ - ./env/
+verbosity: 1

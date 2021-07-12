@@ -1,0 +1,10 @@
+---
+- name: manage update-motd
+  ansible.builtin.apt:
+    name: update_motd_package_name
+    state: update_motd_package_state
+
+- name: manage landscape package
+  ansible.builtin.apt:
+    name: landscape-common
+    state: update_motd_landscape_state

@@ -1,0 +1,26 @@
+---
+- name: Verify (Ubuntu)
+  hosts: ubuntu
+  tasks:
+    - name: get 00-header
+      ansible.builtin.stat:
+        path: /etc/update-motd.d/00-header
+      register: motd_script
+
+    - name: Ensure the script is not executable
+      assert:
+        that:
+          - motd_script.stat.executable == false
+
+- name: Verify (Debian)
+  hosts: debian
+  tasks:
+    - name: get 10-uname
+      ansible.builtin.stat:
+        path: /etc/update-motd.d/10-uname
+      register: motd_script
+
+    - name: Ensure the script is not executable
+      assert:
+        that:
+          - motd_script.stat.executable == false

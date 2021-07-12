@@ -1,0 +1,6 @@
+ansible==4.2.0
+ansible-lint==5.0.12
+molecule==3.3.4
+molecule-vagrant==0.6.3
+python-vagrant==0.5.15
+yamllint==1.26.1
