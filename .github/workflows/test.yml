@@ -1,0 +1,47 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install lint packages
+        run: pip3 install ansible-core ansible-lint yamllint
+
+      - name: Ansible Lint
+        run: |
+          ansible-lint -q .
+
+      - name: YAML Lint
+        run: |
+          yamllint .
+
+  molecule:
+    name: Molecule
+    runs-on: macos-10.15
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install molecule dependencies
+        run: pip3 install ansible molecule molecule-vagrant python-vagrant
+
+      - name: Molecule test
+        run: molecule test

@@ -12,7 +12,7 @@
   tasks:
     - name: "Include update_motd"
       include_role:
-        name: "update_motd"
+        name: "gibbs.update_motd"
       vars:
         update_motd_disable_scripts:
           - 00-header
