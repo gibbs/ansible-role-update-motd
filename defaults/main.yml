@@ -1,6 +1,6 @@
 ---
 # When true the /etc/motd will be removed if it exists
-update_motd_remove_motd_directory: true
+update_motd_remove_motd_directory: false
 
 # Manage the MOTD package and service (Ubuntu only)
 update_motd_package_name: "update-motd"
@@ -15,4 +15,5 @@ update_motd_landscape_state: present
 update_motd_disable_motd_service: true
 
 # An array of scripts in /etc/update-motd.d/ to disable
-update_motd_disable_scripts: []
+update_motd_disable_scripts:
+  - 98-cloudguest
