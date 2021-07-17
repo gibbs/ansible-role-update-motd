@@ -22,30 +22,9 @@
 - include_tasks: ubuntu.yml
   when: ansible_os_family|lower == 'ubuntu'
 
-- name: find dynamic motd scripts
-  ansible.builtin.find:
-    path: /etc/update-motd.d/
-    file_type: any
-    follow: true
-    recurse: false
-  register: update_motd_scripts
-
-- name: enable dynamic motd scripts
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    mode: +x
-    recurse: false
-  with_items: "{{ update_motd_scripts.files }}"
-  when: (item.path | basename) not in update_motd_disable_scripts
-  loop_control:
-    label: "{{ item.path }}"
-
-- name: disable dynamic motd scripts
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    mode: -x
-    recurse: false
-  with_items: "{{ update_motd_scripts.files }}"
-  when: (item.path | basename) in update_motd_disable_scripts
-  loop_control:
-    label: "{{ item.path }}"
+- name: update motd scripts
+  assert:
+    that: true
+    quiet: true
+  changed_when: true
+  notify: "update dynamic motd"
