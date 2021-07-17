@@ -60,6 +60,7 @@ to you:
       ansible.builtin.copy:
         src: files/my-script.sh
         dest: /etc/update-motd.d/50-my-script
+      notify: "update dynamic motd"
 ```
 
 ## Role Variables
