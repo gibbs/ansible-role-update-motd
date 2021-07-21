@@ -9,6 +9,7 @@
 
 - name: ensure the motd service is disabled
   ansible.builtin.service:
+    name: motd
     state: stopped
     enabled: false
   when:
