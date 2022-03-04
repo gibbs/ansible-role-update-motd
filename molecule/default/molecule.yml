@@ -48,6 +48,13 @@ platforms:
     groups:
       - debian
 
+  - name: debian11
+    box: debian/bullseye64
+    memory: 512
+    cpus: 1
+    groups:
+      - debian
+
 provisioner:
   name: ansible
   playbooks:

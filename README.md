@@ -106,6 +106,7 @@ A list of default MOTD script names commonly used in Debian and Ubuntu.
 
 - Debian 9 stretch
 - Debian 10 buster
+- Debian 11 bullseye
 - Ubuntu 14.04 Trusty Tahr
 - Ubuntu 16.04 Xenial Xerus
 - Ubuntu 18.04 Bionic Beaver
