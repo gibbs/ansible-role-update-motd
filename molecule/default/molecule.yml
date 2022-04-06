@@ -34,6 +34,13 @@ platforms:
     groups:
       - ubuntu
 
+  - name: ubuntu22
+    box: ubuntu/jammy64
+    memory: 512
+    cpus: 1
+    groups:
+      - ubuntu
+
   - name: debian9
     box: debian/stretch64
     memory: 512

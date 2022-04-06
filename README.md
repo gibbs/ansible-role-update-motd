@@ -85,11 +85,12 @@ A list of default MOTD script names commonly used in Debian and Ubuntu.
 
 | Filename                    | Releases |
 | --------------------------- | -------- |
-| `00-header`                 | Ubuntu 14, 16, 18, 20 |
-| `10-help-text`              | Ubuntu 14, 16, 18, 20 |
+| `00-header`                 | Ubuntu 14, 16, 18, 20, 22 |
+| `10-help-text`              | Ubuntu 14, 16, 18, 20, 22 |
 | `10-uname`                  | Debian 9, 10 |
-| `50-landscape-sysinfo`      | Ubuntu 14, 18, 20 |
-| `50-motd-news`              | Ubuntu 16, 18, 20 |
+| `50-landscape-sysinfo`      | Ubuntu 14, 18, 20, 22 |
+| `50-motd-news`              | Ubuntu 16, 18, 20, 22 |
+| `60-unminimize`             | Ubuntu 22 |
 | `85-fwupd`                  | Ubuntu 20 |
 | `88-esm-announce`           | Ubuntu 16, 18, 20 |
 | `90-updates-available`      | Ubuntu 14, 16, 18 |
@@ -104,13 +105,14 @@ A list of default MOTD script names commonly used in Debian and Ubuntu.
 
 ## Supported Systems
 
-- Debian 9 stretch
-- Debian 10 buster
 - Debian 11 bullseye
-- Ubuntu 14.04 Trusty Tahr
-- Ubuntu 16.04 Xenial Xerus
-- Ubuntu 18.04 Bionic Beaver
+- Debian 10 buster
+- Debian 9 stretch
+- Ubuntu 22.04 Jammy Jellyfish
 - Ubuntu 20.04 Focal Fossa
+- Ubuntu 18.04 Bionic Beaver
+- Ubuntu 16.04 Xenial Xerus
+- Ubuntu 14.04 Trusty Tahr
 
 ## License
 
